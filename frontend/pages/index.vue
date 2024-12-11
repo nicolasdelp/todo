@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">
-      Login
-    </h1>
+    <h1 class="title">Login</h1>
     <form @submit.prevent="performLogin" action="post">
       <p>
         <input
@@ -13,7 +11,7 @@
           placeholder="Username"
           required
           autofocus
-        >
+        />
       </p>
       <p>
         <input
@@ -23,34 +21,33 @@
           name="password"
           placeholder="Password"
           required
-        >
+        />
       </p>
-      <button type="submit">
-        Sign in
-      </button>
+      <button type="submit">Sign in</button>
     </form>
   </div>
 </template>
 <script>
-
 export default {
-  data () {
+  data() {
     return {
-      username: '',
-      password: ''
-    }
+      username: "",
+      password: "",
+    };
   },
   methods: {
-    async performLogin () {
-      if (await this.$services.login.performLogin(this.username, this.password)) {
-        this.$router.push('todo')
+    async performLogin() {
+      if (
+        await this.$services.login.performLogin(this.username, this.password)
+      ) {
+        this.$router.push("todo");
       } else {
-        this.username = ''
-        this.password = ''
+        this.username = "";
+        this.password = "";
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style>
 form {
