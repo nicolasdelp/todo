@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h1 class="title">Login</h1>
-
     <form @submit.prevent="performLogin" action="post">
       <p>
         <input
